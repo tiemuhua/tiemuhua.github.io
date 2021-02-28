@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>mit 6.828 lab01 find | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="思路没啥好说的。具体代码借鉴了https:&#x2F;&#x2F;github.com&#x2F;ChyuWei&#x2F;xv6-riscv-fall19和https:&#x2F;&#x2F;github.com&#x2F;monkey2000&#x2F;xv6-riscv-fall19。代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mit 6.828 lab01 find">
+<meta property="og:url" content="http://example.com/2021/02/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab01-find/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="思路没啥好说的。具体代码借鉴了https:&#x2F;&#x2F;github.com&#x2F;ChyuWei&#x2F;xv6-riscv-fall19和https:&#x2F;&#x2F;github.com&#x2F;monkey2000&#x2F;xv6-riscv-fall19。代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-09T16:17:17.000Z">
+<meta property="article:modified_time" content="2021-02-20T08:29:51.745Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-操作系统/mit-6-828-lab01-find" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab01-find/" class="article-date">
+  <time class="dt-published" datetime="2021-02-09T16:17:17.000Z" itemprop="datePublished">2021-02-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      mit 6.828 lab01 find
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>思路没啥好说的。具体代码借鉴了<a target="_blank" rel="noopener" href="https://github.com/ChyuWei/xv6-riscv-fall19%E5%92%8Chttps://github.com/monkey2000/xv6-riscv-fall19%E3%80%82">https://github.com/ChyuWei/xv6-riscv-fall19和https://github.com/monkey2000/xv6-riscv-fall19。</a><br>代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/types.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/stat.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;user/user.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/fs.h&quot;</span></span></span><br><span class="line"><span class="comment">//匹配正则表达式</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">match</span><span class="params">(<span class="keyword">char</span>* file_name, <span class="keyword">char</span>* regex)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">char</span> chr = *regex, chf = *file_name;</span><br><span class="line">        <span class="keyword">if</span> (chf == <span class="string">&#x27;\0&#x27;</span> &amp;&amp; chr == <span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (chr == <span class="string">&#x27;*&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> cur_match = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">char</span>* cur_file_name = file_name;</span><br><span class="line">            <span class="keyword">for</span> (;*cur_file_name != <span class="string">&#x27;\0&#x27;</span>;cur_file_name++) &#123;</span><br><span class="line">                cur_match |= match(cur_file_name, regex + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> cur_match | match(cur_file_name, regex + <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (chr == <span class="string">&#x27;.&#x27;</span> || chr == chf) &#123;</span><br><span class="line">            file_name++;</span><br><span class="line">            regex++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">path2file_name</span><span class="params">(<span class="keyword">char</span>* path)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>* p = path + <span class="built_in">strlen</span>(path);</span><br><span class="line">    <span class="keyword">while</span> (*p != <span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">        p--;</span><br><span class="line">    &#125;</span><br><span class="line">    p++;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">find</span><span class="params">(<span class="keyword">char</span>* file_path, <span class="keyword">char</span>* regex, <span class="keyword">int</span> cnt)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> fd;</span><br><span class="line">    <span class="keyword">if</span> ((fd = open(file_path, <span class="number">0</span>)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="number">2</span>, <span class="string">&quot;find: cannot open %s\n&quot;</span>, file_path);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">    <span class="keyword">if</span> (fstat(fd, &amp;st) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(<span class="number">2</span>, <span class="string">&quot;find: cannot stat %s\n&quot;</span>, file_path);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (st.type == T_FILE) &#123;</span><br><span class="line">        <span class="keyword">if</span> (match(path2file_name(file_path), regex)) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, file_path);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (st.type == T_DIR) &#123;</span><br><span class="line">        <span class="keyword">char</span> buf[<span class="number">64</span>];</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">strlen</span>(file_path) + <span class="number">1</span> + DIRSIZ + <span class="number">1</span> &gt; <span class="keyword">sizeof</span> buf) &#123;</span><br><span class="line">            <span class="comment">// path_name, &#x27;/&#x27;, file_name, &#x27;\0&#x27;</span></span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;ls: path too long\n&quot;</span>);</span><br><span class="line">            close(fd);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">strcpy</span>(buf, file_path);</span><br><span class="line">        <span class="keyword">char</span>* p = buf + <span class="built_in">strlen</span>(buf);</span><br><span class="line">        *p = <span class="string">&#x27;/&#x27;</span>;</span><br><span class="line">        p++;</span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">dirent</span> <span class="title">de</span>;</span></span><br><span class="line">        <span class="keyword">while</span> (read(fd, &amp;de, <span class="keyword">sizeof</span> de) == <span class="keyword">sizeof</span> de) &#123;</span><br><span class="line">            <span class="keyword">if</span> (de.inum == <span class="number">0</span> || <span class="built_in">strcmp</span>(de.name, <span class="string">&quot;.&quot;</span>) == <span class="number">0</span> || <span class="built_in">strcmp</span>(de.name, <span class="string">&quot;..&quot;</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">//仍然不清楚这个inum是干肾么的。感觉文件的inode是从1开始分配的啊？根目录的inode不是1吗？</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            memmove(p, de.name, DIRSIZ);</span><br><span class="line">            p[DIRSIZ] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">            find(buf, regex, cnt + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//必须要手动关文件。同时打开是文件不能超过15个，不关的话后面的文件会打开失败。</span></span><br><span class="line">    close(fd);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (argc &lt; <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="built_in">exit</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    find(argv[<span class="number">1</span>], argv[<span class="number">2</span>], <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab01-find/" data-id="cklowtyoi000jrkv85hzh3a04" data-title="mit 6.828 lab01 find" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/02/10/%E6%9D%82%E6%96%87/%E4%BA%BA%E5%8F%A3%E6%98%AF%E4%B8%8D%E5%8F%AF%E5%86%8D%E7%94%9F%E8%B5%84%E6%BA%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          人口是不可再生资源
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/02/09/%E9%9A%8F%E7%AC%94/%E7%A7%8B%E5%87%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">秋凉</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A7%E4%B8%9A%E8%B0%83%E7%A0%94/" rel="tag">产业调研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" rel="tag">控制理论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E6%96%87/" rel="tag">杂文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6bug/" rel="tag">玄学bug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%BF%E6%82%9F/" rel="tag">顿悟</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E4%BA%A7%E4%B8%9A%E8%B0%83%E7%A0%94/" style="font-size: 18px;">产业调研</a> <a href="/tags/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" style="font-size: 10px;">控制理论</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%9D%82%E6%96%87/" style="font-size: 20px;">杂文</a> <a href="/tags/%E7%8E%84%E5%AD%A6bug/" style="font-size: 12px;">玄学bug</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 14px;">随笔</a> <a href="/tags/%E9%A1%BF%E6%82%9F/" style="font-size: 10px;">顿悟</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/28/%E5%8F%8D%E6%80%9D/2021%E5%AF%92%E5%81%87%E5%8F%8D%E6%80%9D/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/27/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2/">卡尔曼滤波</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/24/%E7%8E%84%E5%AD%A6bug/%E6%8A%BD%E9%A3%8E%E7%9A%84rust-src/">抽风的rust-src</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E4%BC%99%E4%BC%B4%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%90%86%E8%A7%A3/">对伙伴系统的理解</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/20/%E9%9A%8F%E7%AC%94/%E8%8D%A3%E5%85%89%E5%A6%82%E5%A2%9F/">秋凉</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

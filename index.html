@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-反思/2021寒假反思" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/28/%E5%8F%8D%E6%80%9D/2021%E5%AF%92%E5%81%87%E5%8F%8D%E6%80%9D/" class="article-date">
+  <time class="dt-published" datetime="2021-02-28T08:19:08.721Z" itemprop="datePublished">2021-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>大学生活回顾：<br>学习尚可，差强人意。需要注意学习的时候总是分心，尤其是刷知乎占用了很多时间。<br>体育退步较大。<br>和宿舍舍友及其他同学关系一般。</p>
+<p>未来的路：<br>希望能在SLAM、规划、控制、编译器、操作系统、数据库这几条路中找到适合自己的方向。不能脚踩两只船，最后掉水里。<br>不知道能不能在车联网和鸿蒙这轮风口中飞上天。生死有命富贵在天吧。</p>
+<p>21天成长方案：<br>刷完MIT6.S081和清华操作系统。</p>
+<p>书院意见：反思类作业不要有字数要求。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/28/%E5%8F%8D%E6%80%9D/2021%E5%AF%92%E5%81%87%E5%8F%8D%E6%80%9D/" data-id="cklowtyob000frkv8akwiah13" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-控制理论/卡尔曼滤波" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/27/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2/" class="article-date">
+  <time class="dt-published" datetime="2021-02-27T10:43:30.000Z" itemprop="datePublished">2021-02-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/27/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2/">卡尔曼滤波</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>考虑状态方程与观测方程：<br>$$x_k=Ax_{k-1}+Bu_k+w $$<br>$$y_k=Cx_k+v$$<br>其中 $x_{k-1}$ 的方差为$P_{k-1}$，均值为$x_{k-1}^0$。$w$的方差为$Q$，$v$的方差为$R$。</p>
+<p>我们先不考虑$y_k$，易知，$x_k$的均值为$x_k^{-}=Ax_{k-1}^-+Bu_k$，方差为$P_{k}^1=AP_{k-1}A^T$。</p>
+<p>然后我们再考虑观测方程。<br>令随机变量$z_{k}=x_k+C^{-1}v$，即$z_k=C^{-1}y_k$。</p>
+<p>易知，$z_k$的均值为$x_k$，方差为$P^2_k=C^{-1}R{C^{-1}}^T$。</p>
+<p>考虑贝叶斯先验方程：<br>$$P(x_k|z_k)=\frac{P(z_k|x_k)P(x_k)}{P(z_k))} $$<br>其中<br>$$P(x_k)=K_1exp(-\frac{(x_k^{-}-x_k)^T{P_k^1}^{-1}(x_k^{-}-x_k)}{2})$$<br>$$P(z_k|x_k)=K_2exp(-\frac{(z_k-x_k)^T{P_k^2}^{-1}(z_k-x_k)}{2})$$<br>$K_1$、$K_2$分别为仅与$P_k^1$、$P_k^2$有关的常数。</p>
+<p>又因为$P(z_k)=P(x_k)*P(z_k|x_k)$，$P(z_k)$与$x_k$无关。</p>
+<p>将$P(x_k)$和$P(z_k|x_k)$代入$P(x_k|z_k)$的表达式，可得：</p>
+<p>$x_k$的方差为$\frac{P_k^1P_k^2}{P_k^1+P_k^2}$，均值为$\frac{P_k^1x_k^2+P_k^2x_k^1}{P_k^1+P_k^2}$</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/27/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2/" data-id="cklowtyog000hrkv880ja31bh" data-title="卡尔曼滤波" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" rel="tag">控制理论</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-玄学bug/抽风的rust-src" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/24/%E7%8E%84%E5%AD%A6bug/%E6%8A%BD%E9%A3%8E%E7%9A%84rust-src/" class="article-date">
+  <time class="dt-published" datetime="2021-02-24T08:46:15.000Z" itemprop="datePublished">2021-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/24/%E7%8E%84%E5%AD%A6bug/%E6%8A%BD%E9%A3%8E%E7%9A%84rust-src/">抽风的rust-src</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>wsl上面的rust的nightly-2019-09-02工具链明明装上了rust-src，list显示有。但是编译的时候就是显示没装上。见鬼。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/24/%E7%8E%84%E5%AD%A6bug/%E6%8A%BD%E9%A3%8E%E7%9A%84rust-src/" data-id="cklowtyp3001jrkv89f91g5ro" data-title="抽风的rust-src" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6bug/" rel="tag">玄学bug</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-操作系统/对伙伴系统的理解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E4%BC%99%E4%BC%B4%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%90%86%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2021-02-24T04:35:18.000Z" itemprop="datePublished">2021-02-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E4%BC%99%E4%BC%B4%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%90%86%E8%A7%A3/">对伙伴系统的理解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在分配内存的时候，我们需要快速的找到一块大小合适的连续内存。<br>伙伴系统的核心不是伙伴，而是内存大小的对数离散化。<br>如果内存大小size是一个任意整数，建立一个size_2_addr的索引非常困难，代价非常大。<br>那我们就可以假设size必须是2的p次幂，p从0到m，然后建立m个红黑树，第p个红黑树维护大小为2^p的内存碎片的首地址。<br>分配的时候分配地址最低的内存碎片。<br>释放内存的时候如果发现红黑树的伙伴节点与当前内存碎片相邻，则合并。<br>这样可以在logn的时间内完成内存的释放，n为内存碎片的数量。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E4%BC%99%E4%BC%B4%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%90%86%E8%A7%A3/" data-id="cklowtyon000srkv8cwnz5e3r" data-title="对伙伴系统的理解" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-随笔/荣光如墟" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/20/%E9%9A%8F%E7%AC%94/%E8%8D%A3%E5%85%89%E5%A6%82%E5%A2%9F/" class="article-date">
+  <time class="dt-published" datetime="2021-02-20T12:39:41.000Z" itemprop="datePublished">2021-02-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/20/%E9%9A%8F%E7%AC%94/%E8%8D%A3%E5%85%89%E5%A6%82%E5%A2%9F/">秋凉</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>风起 远方 星辰外的家乡<br>破晓 永夜低徊未央<br>我履此地 封疆<br>拔剑为汝 守望<br>无所畏惧 挥戈 击碎华章<br>铁衣 兵临 握燃火的权杖<br>马踏 旧世界的荣光<br>走过阙下 鸢翔<br>尽饮青阳 疏狂<br>朱颜华盖 尘封 盛年殿堂<br>跃马 沙场 共流血的残阳<br>今生 筚路何曾遗忘<br>黎庶同苦 盛衰<br>诸神默默 不朽<br>乱世谁主 斩开 宿命屏障<br>硝烟散作 乱 惆怅终回<br>披杀伐 为你 折一枝花<br>同渡忘川 驰沐沧桑</p>
+<p>by 烟雨江南<br>永夜君王主题词<br>曲为马克西姆《出埃及记》</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/20/%E9%9A%8F%E7%AC%94/%E8%8D%A3%E5%85%89%E5%A6%82%E5%A2%9F/" data-id="cklowtypj0027rkv88ipt8nms" data-title="秋凉" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-操作系统/对银行家算法的理解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2021-02-20T04:35:18.000Z" itemprop="datePublished">2021-02-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3/">对银行家算法的理解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>操作系统在调度进程的时候，各个进程是并发执行的，我们无法预知未来的某个时刻是哪个进程在执行。<br>银行家算法的核心在于，我们在判断调度策略是否安全的时候，认为各个进程是执行完一个再执行下一个。<br>注意贷款者贷款的时候不是一下子贷完所有的款，也不是一下子还完所有的钱。<br>而我们在判断能不能放贷的时候假设未来贷款者是一下子贷完所有款还完所有钱的。<br>这样就可以保证一定存在可行的调度策略（即一个一个的执行，不存在并发）。<br>当并发出现时（即上一个进程还没有执行完下一个就要开始），上一个贷款者还没有还款下一个贷款者就要来借钱。<br>就进入下一轮的银行家算法。<br>先假设把贷放出去，然后看是否存在最保守的调度算法（即所有进程一个一个的执行，不存在并发）。<br>如果不存在最保守的调度算法，那就不能放贷，得等到有人还款之后才能继续往下进行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95%E7%9A%84%E7%90%86%E8%A7%A3/" data-id="cklowtyoo000trkv86ghh93uh" data-title="对银行家算法的理解" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-产业调研/为什么军工和航空航天看起来很高大上" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/20/%E4%BA%A7%E4%B8%9A%E8%B0%83%E7%A0%94/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%9B%E5%B7%A5%E5%92%8C%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E7%9C%8B%E8%B5%B7%E6%9D%A5%E5%BE%88%E9%AB%98%E5%A4%A7%E4%B8%8A/" class="article-date">
+  <time class="dt-published" datetime="2021-02-19T17:39:24.000Z" itemprop="datePublished">2021-02-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/20/%E4%BA%A7%E4%B8%9A%E8%B0%83%E7%A0%94/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%9B%E5%B7%A5%E5%92%8C%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E7%9C%8B%E8%B5%B7%E6%9D%A5%E5%BE%88%E9%AB%98%E5%A4%A7%E4%B8%8A/">为什么军工和航空航天看起来很高大上</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>我认为主要原因有两个。</p>
+<p>第一个原因在于，中国和其他国家长期以来（尤其是在美苏争霸期间），将大量资源投入军工行业。<br>军工行业的研发投入占社会总研发投入的比重非常高，确实很高大上。<br>但是现在天下承平日久，军工行业的产值及研发投入比民用行业要少很多。<br>以西交为例，工科专业去军工行业的毕业生远到不了一半。<br>在这种情况下，军口的创新能力肯定是比不上民口的。</p>
+<p>第二个原因是距离产生美。<br>文学中有一个说法认为，距离人们日常口语较远的词汇，听起来较为高大上。<br>比如说霜之哀伤就比火之热情高大上，因为哀伤不常用于口语，而热情常用于口语。<br>这个说法的极端案例便是在高考作文当中，高中生使用各种生僻词汇，充斥着茴香豆的四种写法。<br>军工和航空航天里人们较远，所以人们觉得这玩意很高大上。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/20/%E4%BA%A7%E4%B8%9A%E8%B0%83%E7%A0%94/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%9B%E5%B7%A5%E5%92%8C%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E7%9C%8B%E8%B5%B7%E6%9D%A5%E5%BE%88%E9%AB%98%E5%A4%A7%E4%B8%8A/" data-id="cklowtyo30003rkv8gqzi3a4i" data-title="为什么军工和航空航天看起来很高大上" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%A7%E4%B8%9A%E8%B0%83%E7%A0%94/" rel="tag">产业调研</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-操作系统/mit-6-828-lab02-sh" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab02-sh/" class="article-date">
+  <time class="dt-published" datetime="2021-02-16T16:13:40.000Z" itemprop="datePublished">2021-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab02-sh/">mit 6.828 lab02 sh</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/types.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/param.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;user/user.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/fcntl.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_CMD 8</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_PIPE (MAX_CMD - 1) * 2</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Cmd</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span>* args[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">char</span>* input;</span><br><span class="line">    <span class="keyword">char</span>* output;</span><br><span class="line">&#125;cmds[MAX_CMD];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">is_normal</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* p)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">is_normal</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> *p != <span class="string">&#x27; &#x27;</span> &amp;&amp; *p != <span class="string">&#x27;&lt;&#x27;</span> &amp;&amp; *p != <span class="string">&#x27;&gt;&#x27;</span> &amp;&amp; *p != <span class="string">&#x27;|&#x27;</span> &amp;&amp; *p != <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">parse_input</span><span class="params">(<span class="keyword">char</span>* p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cmd_idx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (*p == <span class="string">&#x27; &#x27;</span>) &#123; *p++ = <span class="number">0</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//get cmds</span></span><br><span class="line">    <span class="keyword">while</span> (*p != <span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> arg_idx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (*p == <span class="string">&#x27; &#x27;</span>) &#123; *p++ = <span class="number">0</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//get args</span></span><br><span class="line">        <span class="keyword">while</span> (*p != <span class="string">&#x27;|&#x27;</span> &amp;&amp; *p != <span class="string">&#x27;\0&#x27;</span> &amp;&amp; *p != <span class="string">&#x27;&gt;&#x27;</span> &amp;&amp; *p != <span class="string">&#x27;&lt;&#x27;</span>) &#123;</span><br><span class="line">            <span class="comment">//这里不可能是空格</span></span><br><span class="line">            cmds[cmd_idx].args[arg_idx++] = p;</span><br><span class="line">            cmds[cmd_idx].args[arg_idx] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (is_normal(p)) &#123; p++; &#125;</span><br><span class="line">            <span class="keyword">while</span> (*p == <span class="string">&#x27; &#x27;</span>) &#123; *p++ = <span class="number">0</span>; &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//get io redirect</span></span><br><span class="line">        <span class="keyword">while</span> (*p == <span class="string">&#x27;&gt;&#x27;</span> || *p == <span class="string">&#x27;&lt;&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">char</span> io = *p;</span><br><span class="line">            *p++ = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">            <span class="keyword">while</span> (*p == <span class="string">&#x27; &#x27;</span>) &#123; *p++ = <span class="number">0</span>; &#125;</span><br><span class="line">            <span class="keyword">if</span> (io == <span class="string">&#x27;&lt;&#x27;</span>) &#123; cmds[cmd_idx].input = p; &#125; <span class="keyword">else</span> &#123; cmds[cmd_idx].output = p; &#125;</span><br><span class="line">            <span class="keyword">while</span> (is_normal(p)) &#123; p++; &#125;</span><br><span class="line">            <span class="keyword">while</span> (*p == <span class="string">&#x27; &#x27;</span>) &#123; *p++ = <span class="number">0</span>; &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (*p == <span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> cmd_idx + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        *p++ = <span class="string">&#x27;\0&#x27;</span>;<span class="comment">// &#x27;|&#x27; -&gt; &#x27;\0&#x27;</span></span><br><span class="line">        <span class="keyword">while</span> (*p == <span class="string">&#x27; &#x27;</span>) &#123; *p++ = <span class="number">0</span>; &#125;</span><br><span class="line">        cmd_idx++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">redirect</span><span class="params">(<span class="keyword">int</span> io, <span class="keyword">int</span> fd)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (io == fd) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">    close(io);</span><br><span class="line">    dup(fd);</span><br><span class="line">    close(fd);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">run_cmd_my</span><span class="params">(<span class="keyword">int</span> cmd_num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> io_fd[MAX_CMD &lt;&lt; <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span> (cmds[<span class="number">0</span>].input != <span class="number">0</span>) &#123;</span><br><span class="line">        io_fd[<span class="number">0</span>] = open(cmds[<span class="number">0</span>].input, O_RDONLY);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        io_fd[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span>* fd = io_fd;</span><br><span class="line">    fd++;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; cmd_num;++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i != cmd_num - <span class="number">1</span>) &#123;</span><br><span class="line">            pipe(fd);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cmds[cmd_num - <span class="number">1</span>].output != <span class="number">0</span>) &#123;</span><br><span class="line">            io_fd[(cmd_num &lt;&lt; <span class="number">1</span>) - <span class="number">1</span>] = open(cmds[cmd_num - <span class="number">1</span>].output, O_RDWR | O_CREATE);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            io_fd[(cmd_num &lt;&lt; <span class="number">1</span>) - <span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        fd += <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (fork()) &#123;</span><br><span class="line">            wait(<span class="number">0</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            redirect(<span class="number">0</span>, io_fd[i * <span class="number">2</span>]);</span><br><span class="line">            redirect(<span class="number">1</span>, io_fd[i * <span class="number">2</span> + <span class="number">1</span>]);</span><br><span class="line">            exec(cmds[i].args[<span class="number">0</span>], cmds[i].args);</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">100</span>];</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;@ &quot;</span>);</span><br><span class="line">        gets(buf, <span class="keyword">sizeof</span> buf);</span><br><span class="line">        <span class="keyword">if</span> (buf[<span class="number">0</span>] == <span class="string">&#x27;\n&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        buf[<span class="built_in">strlen</span>(buf) - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> num = parse_input(buf);</span><br><span class="line">        run_cmd_my(num);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab02-sh/" data-id="cklowtyom000prkv82sn8g587" data-title="mit 6.828 lab02 sh" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-玄学bug/字符串常量是不能够被修改的" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/14/%E7%8E%84%E5%AD%A6bug/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%98%AF%E4%B8%8D%E8%83%BD%E5%A4%9F%E8%A2%AB%E4%BF%AE%E6%94%B9%E7%9A%84/" class="article-date">
+  <time class="dt-published" datetime="2021-02-14T08:46:15.000Z" itemprop="datePublished">2021-02-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/14/%E7%8E%84%E5%AD%A6bug/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%98%AF%E4%B8%8D%E8%83%BD%E5%A4%9F%E8%A2%AB%E4%BF%AE%E6%94%B9%E7%9A%84/">字符串常量是不能够被修改的</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>字符串常量是不能被修改的，在调试程序的时候要尤其注意这一点。<br>下面的这段代码在运行的时候会报segment fault。一直以为是数组越界的锅。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;string.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">parse_input</span><span class="params">(<span class="keyword">char</span>* p)</span> </span>&#123;</span><br><span class="line">    p = p + <span class="number">1</span>;</span><br><span class="line">    *p = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// do something else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num = parse_input(<span class="string">&quot;ls|ls\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写成这个样子就不会报错了。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stdio.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;string.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">parse_input</span><span class="params">(<span class="keyword">char</span>* p)</span> </span>&#123;</span><br><span class="line">    p = p + <span class="number">1</span>;</span><br><span class="line">    *p = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// do something else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">1000</span>];</span><br><span class="line">    <span class="built_in">sprintf</span>(buf, <span class="string">&quot;ls|ls\n&quot;</span>);</span><br><span class="line">    <span class="keyword">int</span> num = parse_input(buf);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是在CPP的string当中类似的写法是可以的</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">string</span> str = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">    str[<span class="number">2</span>] = <span class="string">&#x27;p&#x27;</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>等于号实质上是一个构造函数，str并不是一个常量。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/14/%E7%8E%84%E5%AD%A6bug/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%98%AF%E4%B8%8D%E8%83%BD%E5%A4%9F%E8%A2%AB%E4%BF%AE%E6%94%B9%E7%9A%84/" data-id="cklowtyp1001grkv838gj2tti" data-title="字符串常量是不能够被修改的" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6bug/" rel="tag">玄学bug</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-操作系统/mit-6-828-lab01-xargs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab01-xargs/" class="article-date">
+  <time class="dt-published" datetime="2021-02-10T06:35:00.000Z" itemprop="datePublished">2021-02-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab01-xargs/">mit 6.828 lab01 xargs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>折腾了半天发现自己把字符串的结尾方式给搞错了。<br>字符串的长度是不包含最后的’\0’的<br>我吃屎。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/types.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/stat.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/param.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;user/user.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> arg_len = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span>* args[MAXARG];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; argc;++i) &#123;</span><br><span class="line">        args[i - <span class="number">1</span>] = argv[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> tmp_buf[<span class="number">128</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">    <span class="keyword">while</span> (gets(tmp_buf, <span class="keyword">sizeof</span> tmp_buf)) &#123;</span><br><span class="line">        <span class="keyword">int</span> buf_len = <span class="built_in">strlen</span>(tmp_buf);</span><br><span class="line">        <span class="keyword">if</span> (buf_len &lt; <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">// tmp_buf[buf_len - 1] = &#x27;\0&#x27;;</span></span><br><span class="line">        <span class="comment">// 上面这句话我认为是不需要的。但是在我写博客之前，如果把上面这行代码注释掉，就过不了。写完博客之后又注释了运行了一下，过了。</span></span><br><span class="line">        <span class="comment">// 我也不知道这是肾么情况。</span></span><br><span class="line"></span><br><span class="line">        arg_len = argc - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">char</span>* ptr1 = tmp_buf;</span><br><span class="line">        <span class="keyword">char</span>* ptr2 = tmp_buf;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//我的傻Ⅹ字符串分割处理</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (*ptr1 == <span class="string">&#x27; &#x27;</span>) &#123;</span><br><span class="line">                ptr1++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (*ptr1 == <span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ptr2 = ptr1;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (*ptr1 != <span class="string">&#x27; &#x27;</span> &amp;&amp; *ptr1 != <span class="string">&#x27;\0&#x27;</span> &amp;&amp; *ptr1 != <span class="string">&#x27;\r&#x27;</span> &amp;&amp; *ptr1 != <span class="string">&#x27;\n&#x27;</span>) &#123;</span><br><span class="line">                ptr1++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (*ptr1 == <span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line">                args[arg_len] = ptr2;</span><br><span class="line">                arg_len++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            *ptr1 = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">            ptr1++;</span><br><span class="line">            args[arg_len] = ptr2;</span><br><span class="line">            arg_len++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (arg_len &gt;= MAXARG) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;xargs too many args\n&quot;</span>);</span><br><span class="line">            <span class="built_in">exit</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (arg_len &lt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;xargs too few args\n&quot;</span>);</span><br><span class="line">            <span class="built_in">exit</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        args[arg_len][<span class="number">0</span>] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (fork() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            wait();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            exec(args[<span class="number">0</span>], args);</span><br><span class="line">            <span class="built_in">exit</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">exit</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>某大佬的字符串处理如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">buf[buf_len - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">argv_len = argc - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">char</span>* x = buf;</span><br><span class="line"><span class="keyword">while</span> (*x) &#123;</span><br><span class="line">    <span class="keyword">while</span> (*x &amp;&amp; (*x == <span class="string">&#x27; &#x27;</span>)) *x++ = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (*x) max_argv[argv_len++] = x;</span><br><span class="line">    <span class="keyword">while</span> (*x &amp;&amp; (*x != <span class="string">&#x27; &#x27;</span>)) x++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab01-xargs/" data-id="cklowtyol000orkv83ykd4jbv" data-title="mit 6.828 lab01 xargs" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A7%E4%B8%9A%E8%B0%83%E7%A0%94/" rel="tag">产业调研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" rel="tag">控制理论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82%E6%96%87/" rel="tag">杂文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%84%E5%AD%A6bug/" rel="tag">玄学bug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%BF%E6%82%9F/" rel="tag">顿悟</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E4%BA%A7%E4%B8%9A%E8%B0%83%E7%A0%94/" style="font-size: 18px;">产业调研</a> <a href="/tags/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/" style="font-size: 10px;">控制理论</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16px;">操作系统</a> <a href="/tags/%E6%9D%82%E6%96%87/" style="font-size: 20px;">杂文</a> <a href="/tags/%E7%8E%84%E5%AD%A6bug/" style="font-size: 12px;">玄学bug</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 14px;">随笔</a> <a href="/tags/%E9%A1%BF%E6%82%9F/" style="font-size: 10px;">顿悟</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/28/%E5%8F%8D%E6%80%9D/2021%E5%AF%92%E5%81%87%E5%8F%8D%E6%80%9D/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/27/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/%E5%8D%A1%E5%B0%94%E6%9B%BC%E6%BB%A4%E6%B3%A2/">卡尔曼滤波</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/24/%E7%8E%84%E5%AD%A6bug/%E6%8A%BD%E9%A3%8E%E7%9A%84rust-src/">抽风的rust-src</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E4%BC%99%E4%BC%B4%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%90%86%E8%A7%A3/">对伙伴系统的理解</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/20/%E9%9A%8F%E7%AC%94/%E8%8D%A3%E5%85%89%E5%A6%82%E5%A2%9F/">秋凉</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
