@@ -71,6 +71,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/02/28/test/" class="article-date">
+  <time class="dt-published" datetime="2021-02-28T09:08:50.000Z" itemprop="datePublished">2021-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/02/28/test/">test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>$$a^0_{10}=b$$</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/02/28/test/" data-id="ckloxmat000004ov8drmt8ent" data-title="test" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-反思/2021寒假反思" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/02/28/%E5%8F%8D%E6%80%9D/2021%E5%AF%92%E5%81%87%E5%8F%8D%E6%80%9D/" class="article-date">
@@ -446,49 +485,6 @@
 
 
   
-    <article id="post-操作系统/mit-6-828-lab01-xargs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/02/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab01-xargs/" class="article-date">
-  <time class="dt-published" datetime="2021-02-10T06:35:00.000Z" itemprop="datePublished">2021-02-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/02/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab01-xargs/">mit 6.828 lab01 xargs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>折腾了半天发现自己把字符串的结尾方式给搞错了。<br>字符串的长度是不包含最后的’\0’的<br>我吃屎。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/types.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/stat.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;kernel/param.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;user/user.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> arg_len = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span>* args[MAXARG];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; argc;++i) &#123;</span><br><span class="line">        args[i - <span class="number">1</span>] = argv[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> tmp_buf[<span class="number">128</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">    <span class="keyword">while</span> (gets(tmp_buf, <span class="keyword">sizeof</span> tmp_buf)) &#123;</span><br><span class="line">        <span class="keyword">int</span> buf_len = <span class="built_in">strlen</span>(tmp_buf);</span><br><span class="line">        <span class="keyword">if</span> (buf_len &lt; <span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">// tmp_buf[buf_len - 1] = &#x27;\0&#x27;;</span></span><br><span class="line">        <span class="comment">// 上面这句话我认为是不需要的。但是在我写博客之前，如果把上面这行代码注释掉，就过不了。写完博客之后又注释了运行了一下，过了。</span></span><br><span class="line">        <span class="comment">// 我也不知道这是肾么情况。</span></span><br><span class="line"></span><br><span class="line">        arg_len = argc - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">char</span>* ptr1 = tmp_buf;</span><br><span class="line">        <span class="keyword">char</span>* ptr2 = tmp_buf;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//我的傻Ⅹ字符串分割处理</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span> (*ptr1 == <span class="string">&#x27; &#x27;</span>) &#123;</span><br><span class="line">                ptr1++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (*ptr1 == <span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ptr2 = ptr1;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (*ptr1 != <span class="string">&#x27; &#x27;</span> &amp;&amp; *ptr1 != <span class="string">&#x27;\0&#x27;</span> &amp;&amp; *ptr1 != <span class="string">&#x27;\r&#x27;</span> &amp;&amp; *ptr1 != <span class="string">&#x27;\n&#x27;</span>) &#123;</span><br><span class="line">                ptr1++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (*ptr1 == <span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line">                args[arg_len] = ptr2;</span><br><span class="line">                arg_len++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            *ptr1 = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">            ptr1++;</span><br><span class="line">            args[arg_len] = ptr2;</span><br><span class="line">            arg_len++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (arg_len &gt;= MAXARG) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;xargs too many args\n&quot;</span>);</span><br><span class="line">            <span class="built_in">exit</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (arg_len &lt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;xargs too few args\n&quot;</span>);</span><br><span class="line">            <span class="built_in">exit</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        args[arg_len][<span class="number">0</span>] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (fork() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            wait();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            exec(args[<span class="number">0</span>], args);</span><br><span class="line">            <span class="built_in">exit</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">exit</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>某大佬的字符串处理如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">buf[buf_len - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">argv_len = argc - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">char</span>* x = buf;</span><br><span class="line"><span class="keyword">while</span> (*x) &#123;</span><br><span class="line">    <span class="keyword">while</span> (*x &amp;&amp; (*x == <span class="string">&#x27; &#x27;</span>)) *x++ = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (*x) max_argv[argv_len++] = x;</span><br><span class="line">    <span class="keyword">while</span> (*x &amp;&amp; (*x != <span class="string">&#x27; &#x27;</span>)) x++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/02/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mit-6-828-lab01-xargs/" data-id="cklowtyol000orkv83ykd4jbv" data-title="mit 6.828 lab01 xargs" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -539,6 +535,10 @@
       <ul>
         
           <li>
+            <a href="/2021/02/28/test/">test</a>
+          </li>
+        
+          <li>
             <a href="/2021/02/28/%E5%8F%8D%E6%80%9D/2021%E5%AF%92%E5%81%87%E5%8F%8D%E6%80%9D/">(no title)</a>
           </li>
         
@@ -552,10 +552,6 @@
         
           <li>
             <a href="/2021/02/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AF%B9%E4%BC%99%E4%BC%B4%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%90%86%E8%A7%A3/">对伙伴系统的理解</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/20/%E9%9A%8F%E7%AC%94/%E8%8D%A3%E5%85%89%E5%A6%82%E5%A2%9F/">秋凉</a>
           </li>
         
       </ul>
